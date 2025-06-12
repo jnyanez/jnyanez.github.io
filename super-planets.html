@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Super Planets | Grayson's Site</title>
+      <link rel="stylesheet" href="css/styles.css">
+   </head>
+   <body>
+      <div id="site-header"></div>
+
+      <main style="display: flex; justify-content: center;">
+         <div style="position: relative; display: inline-block;">
+            <img src="images/super-planets.jpg" alt="Super Planets" width="725">
+
+            <a class="hotspot" style="top: 240px; left: 38px; width: 150px; height: 170px;" onclick="showPopup('images/mars.jpg')"></a>
+            <a class="hotspot" style="top: 242px; left: 360px; width: 135px; height: 150px;" onclick="showPopup('images/earth.jpg')"></a>
+            <a class="hotspot" style="top: 450px; left: 38px; width: 140px; height: 160px;" onclick="showPopup('images/neptune.jpg')"></a>
+            <a class="hotspot" style="top: 440px; left: 340px; width: 140px; height: 200px;" onclick="showPopup('images/saturn.jpg')"></a>
+            <a class="hotspot" style="top: 655px; left: 50px; width: 155px; height: 190px;" onclick="showPopup('images/pluto.jpg')"></a>
+            <a class="hotspot" style="top: 665px; left: 335px; width: 125px; height: 160px;" onclick="showPopup('images/mercury.jpg')"></a>
+            <a class="hotspot" style="top: 855px; left: 75px; width: 130px; height: 80px;" onclick="showPopup('images/venus.jpg')"></a>
+            <a class="hotspot" style="top: 835px; left: 350px; width: 115px; height: 95px;" onclick="showPopup('images/jupiter.jpg')"></a>
+            <a class="hotspot" style="top: 845px; left: 540px; width: 170px; height: 90px;" onclick="showPopup('images/uranus.jpg')"></a>
+         </div>
+
+         <!-- Popup Modal -->
+         <div id="popup" class="popup" onclick="closePopup()">
+            <div class="popup-content" onclick="event.stopPropagation()">
+               <button class="close-btn" onclick="closePopup()">×</button>
+               <img id="popup-img" src="" alt="Zoomed view">
+            </div>
+         </div>
+      </main>
+
+      <div id="site-footer"></div>
+
+      <script src="js/scripts.js"></script>
+      <script src="js/popup.js"></script>
+   </body>
+</html>

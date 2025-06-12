@@ -1,0 +1,232 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html, body {
+   height: 100%;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   font-family: sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f4f4f4;
+   color: #333;
+}
+
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 80px;
+   display: flex;
+   align-items: center;      /* Centers vertically */
+   justify-content: center;  /* Centers horizontally */
+   text-align: center;
+   background: #ffee00;
+   color: black;
+   font-family: sans-serif;
+   font-size: 1em;
+   z-index: 1000;
+}
+
+html {
+   overflow-y: scroll;
+}
+
+main {
+   flex: 1;
+   padding-top: 130px;
+   padding-bottom: 50px;
+   /*padding: 100px 20px 60px;*/
+}
+
+nav a {
+   margin-left: 1.5em;
+   font-family: sans-serif;
+   font-weight: bold;
+   margin: 0 1em;
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   text-decoration: underline;
+}
+
+p {
+   font-family: sans-serif;
+   font-size: 1.3em;
+}
+
+footer {
+   /* If you want the footer to always appear at the bottom of the page */
+   /*
+   position: fixed;
+   bottom: 0;
+   */
+   left: 0;
+   width: 100%;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   background: #ffee00;
+   color: black;
+   font-family: sans-serif;
+   font-size: 0.8em;
+   z-index: 1000;
+}
+
+footer p {
+   font-family: sans-serif;
+   background: #ffee00;
+   color: black;
+   text-align: center;
+   font-size: 0.8em;
+}
+
+.center {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.logo {
+   width: 100px;
+   padding: 1em;
+}
+
+.hotspot {
+   /* Show red outline for hotspot zones */
+   /*
+   background: rgba(255, 0, 0, 0.3);
+   border: 2px dashed red;
+   */
+   position: absolute;
+   display: block;
+   cursor: pointer;
+}
+
+.popup {
+   display: none;
+   position: fixed;
+   top: 0; left: 0;
+   width: 100vw; height: 100vh;
+   background-color: rgba(0, 0, 0, 0.8);
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+
+.popup-content {
+   position: relative;
+   max-width: 50%;
+   max-height: 50%;
+   display: flex;
+   justify-content:center;
+   align-items: center;
+}
+
+.popup-content img {
+   width: 100%;
+   height: auto;
+   border: 4px solid white;
+   border-radius: 8px;
+}
+
+.popup-content img[src=""] {
+  display: none;
+}
+
+.close-btn {
+   position: absolute;
+   /*top: 50px; right: 405px;*/
+   top: -250px; right: -15px;
+   font-size: 24px;
+   color: white;
+   background: red;
+   border: none;
+   border-radius: 50%;
+   width: 32px; height: 32px;
+   cursor: pointer;
+   line-height: 32px;
+   text-align: center;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 0 1.5em;
+}
+
+.book-row {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.book-row:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.book-row img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 1em;
+}
+
+.book-info h2 {
+  margin: 0 0 0.25em;
+  font-size: 1.2em;
+}
+
+.book-info p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.nav-buttons button {
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-buttons input[type="number"] {
+  font-size: 16px;
+  padding: 4px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

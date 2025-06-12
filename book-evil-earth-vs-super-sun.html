@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Evil Earth vs. Super Sun Book | Grayson's Site</title>
+      <link rel="stylesheet" href="css/styles.css">
+   </head>
+   <body>
+      <div id="site-header"></div>
+
+      <main>
+         <div class="center">
+            <h1>Evil Earth vs. Super Sun</h1>
+            <img id="bookImage" src="images/book-evil-earth-vs-super-sun-cover.jpg" alt="Evil Earth vs. Super Sun Cover" width="725" style="padding-top: 20px; padding-bottom: 20px;">
+            <div class="nav-buttons">
+               <button id="prevBtn" onclick="prevPage()">&lt;</button>
+               <span>Page <span id="currentPage">0</span> of <span id="totalPages"></span></span>
+               <button id="nextBtn" onclick="nextPage()">&gt;</button>
+            </div>
+         </div>
+      </main>
+
+      <div id="site-footer"></div>
+
+      <script src="js/scripts.js"></script>
+      <script src="js/image-nav.js"></script>
+      
+      <script>
+         // Your custom book image list
+         const evilEarthVsSuperSunPages = [
+            'images/book-evil-earth-vs-super-sun-cover.jpg',
+            'images/book-evil-earth-vs-super-sun-page1.jpg',
+            'images/book-evil-earth-vs-super-sun-page2.jpg',
+            'images/book-evil-earth-vs-super-sun-page3.jpg',
+            'images/book-evil-earth-vs-super-sun-page4.jpg',
+            'images/book-evil-earth-vs-super-sun-page5.jpg',
+            'images/book-evil-earth-vs-super-sun-page6.jpg',
+            'images/book-evil-earth-vs-super-sun-page7.jpg'
+         ];
+
+         const navigator = createImageNavigator({
+            imageId: 'bookImage',
+            imageList: evilEarthVsSuperSunPages
+         });
+
+         function nextPage() {
+            navigator.next();
+         }
+
+         function prevPage() {
+            navigator.prev();
+         }
+      </script>
+   </body>
+</html>
+
