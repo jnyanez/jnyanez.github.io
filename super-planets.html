@@ -26,8 +26,10 @@
          <!-- Popup Modal -->
          <div id="popup" class="popup" onclick="closePopup()">
             <div class="popup-content" onclick="event.stopPropagation()">
-               <button class="close-btn" onclick="closePopup()">×</button>
-               <img id="popup-img" src="" alt="Zoomed view">
+               <div class="image-wrapper">
+                  <button class="close-btn" onclick="closePopup()">×</button>
+                  <img id="popup-img" src="" alt="Zoomed view">
+               </div>
             </div>
          </div>
       </main>
