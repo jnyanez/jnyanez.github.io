@@ -103,6 +103,11 @@ footer p {
    text-align: center;
 }
 
+.logo-container {
+   position: absolute;
+   left: 1em;
+}
+
 .logo {
    width: 100px;
    padding: 1em;
