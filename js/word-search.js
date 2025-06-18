@@ -313,4 +313,3 @@ document.querySelectorAll("#wordList li").forEach(item => {
       }, 2000);
    });
 });
-

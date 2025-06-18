@@ -263,19 +263,32 @@ button:disabled {
 }
 
 .games-grid {
-   display: grid;
-   grid-template-columns: repeat(3, 300px);
-   column-gap: 10em; /* space between columns */
-   row-gap: 10em;  /* space between rows */
-   max-width: 650px;
-   margin: 2em auto;
-   padding: 1em;
-   justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 tiles across by default */
+  /*gap: 2em;*/
+  column-gap: 2.5em;
+  row-gap: 5em;
+  padding: 1em;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);  /* 2 tiles across on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: repeat(1, 1fr);  /* 1 tile across on phones */
+  }
 }
 
 .game-box img {
    width: 100%;
    height: auto;
+   max-width: 60%;
    border-radius: 8px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
    transition: transform 0.2s ease;
