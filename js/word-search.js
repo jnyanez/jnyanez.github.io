@@ -201,6 +201,19 @@ function toggleSelect(cell) {
    selectedCells.push(cell);
 }
 
+// Prevent scrolling during touch on mobile
+document.addEventListener("touchstart", function (e) {
+   if (e.target.classList.contains("cell")) {
+      e.preventDefault();
+   }
+}, { passive: false });
+
+document.addEventListener("touchmove", function (e) {
+   if (e.target.classList.contains("cell")) {
+      e.preventDefault();
+   }
+}, { passive: false });
+
 document.addEventListener("mouseup", () => {
    document.querySelectorAll(".cell").forEach(cell => {
       if (cell.dataset.wasFound) {
@@ -209,7 +222,6 @@ document.addEventListener("mouseup", () => {
       }
    });
 
-   // Check if a selected word (forward or reverse) matches any in the word list
    const selectedWord = selectedCells.map(cell => cell.textContent).join("").toUpperCase();
    const reversedWord = selectedWord.split("").reverse().join("");
    const words = Array.from(document.querySelectorAll("#wordList li"));
@@ -235,14 +247,14 @@ document.querySelectorAll("#wordList li").forEach(item => {
       const cells = Array.from(document.querySelectorAll(".cell"));
       let matchedCells = [];
 
+      const directions = [
+         [0, 1], [1, 0], [1, 1], [-1, 1], [-1, -1], [1, -1], [0, -1], [-1, 0]
+      ];
+
       for (let i = 0; i < cells.length; i++) {
          const startCell = cells[i];
          const startRow = parseInt(startCell.dataset.row);
          const startCol = parseInt(startCell.dataset.col);
-
-         const directions = [
-            [0, 1], [1, 0], [1, 1], [-1, 1], [-1, -1], [1, -1], [0, -1], [-1, 0]
-         ];
 
          for (const [dx, dy] of directions) {
             const tempCells = [];
@@ -263,7 +275,7 @@ document.querySelectorAll("#wordList li").forEach(item => {
             }
          }
 
-         // Check reversed direction too
+         // Reversed direction
          if (matchedCells.length === 0) {
             for (const [dx, dy] of directions) {
                const tempCells = [];
