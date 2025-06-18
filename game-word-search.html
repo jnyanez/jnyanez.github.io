@@ -6,36 +6,65 @@
   <link rel="stylesheet" href="css/styles.css">
   <style>
     #grid {
-      display: grid;
-      grid-template-columns: repeat(15, 40px);
-      gap: 3px;
-      margin-bottom: 2em;
-      user-select: none;
+       display: grid;
+       grid-template-columns: repeat(15, 40px);
+       gap: 2px;
+       margin-bottom: 2em;
+       user-select: none;
     }
 
     .cell {
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      line-height: 40px;
-      border: 1px solid #ccc;
-      font-family: monospace;
-      font-weight: bold;
-      font-size: 1.2em;
-      text-transform: uppercase;
-      background-color: white;
-      cursor: pointer;
+       width: 40px;
+       height: 40px;
+       text-align: center;
+       line-height: 40px;
+       border: 1px solid #ccc;
+       font-weight: bold;
+       font-size: 1.2em;
+       text-transform: uppercase;
+       background-color: white;
+       cursor: pointer;
     }
 
-    .cell.selected {
-      background-color: #ffe600; /* yellow highlight */
-      color: black;
+    .selected {
+       background-color: #ffe600;
     }
 
-    .word-list {
-      text-align: center;
-      font-size: 1.1em;
-      font-weight: bold;
+    .found {
+       background-color: #90ee90;
+    }
+
+    .crossed-off {
+       text-decoration: line-through;
+       color: gray;
+    }
+
+    #wordList {
+       text-align: left;
+       display: inline-block;
+       margin: 0 auto 1em;
+    }
+
+    #status {
+       font-size: 1.5em;
+       margin-top: 1em;
+       font-weight: bold;
+       color: green;
+    }
+
+    #restartBtn {
+       margin-top: 1em;
+       padding: 0.5em 1.5em;
+       font-size: 1em;
+       cursor: pointer;
+    }
+
+    .header-restart-container {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 1em;
+       flex-wrap: wrap;
     }
   </style>
 </head>
@@ -45,7 +74,28 @@
   <main class="center-top">
      <h1 style="margin-bottom: .5em;">Space Word Search</h1>
      <div id="grid"></div>
-     <div class="word-list" id="wordList"></div>
+     <div class="header-restart-container">
+        <h2 style="margin-bottom: .5em;">Find these words:</h2>
+        <button id="restartBtn" onclick="window.location.reload()" style="margin-bottom: 2em;">Restart</button>
+     </div>
+     <ul id="wordList" style="text-align: left; display: inline-block;">
+        <li id="word-sunstation">SUNSTATION</li>
+        <li id="word-comic">COMIC</li>
+        <li id="word-planet">PLANET</li>
+        <li id="word-grayson">GRAYSON</li>
+        <li id="word-moon">MOON</li>
+        <li id="word-venus">VENUS</li>
+        <li id="word-mars">MARS</li>
+        <li id="word-jupiter">JUPITER</li>
+        <li id="word-saturn">SATURN</li>
+        <li id="word-neptune">NEPTUNE</li>
+        <li id="word-uranus">URANUS</li>
+        <li id="word-galaxy">GALAXY</li>
+        <li id="word-orbit">ORBIT</li>
+        <li id="word-eclipse">ECLIPSE</li>
+        <li id="word-rocket">ROCKET</li>
+     </ul>
+     <div id="status"></div>
   </main>
 
   <div id="site-footer"></div>
