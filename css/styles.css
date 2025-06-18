@@ -108,6 +108,16 @@ footer p {
    text-align: center;
 }
 
+.center-top {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   justify-content: flex-start;
+   /* min-height: 100vh;    optional: makes layout full-height */
+   /* padding-top: 2em;     optional: space from the top */
+}
+
 .logo-container {
    position: absolute;
    left: 1em;
@@ -254,9 +264,9 @@ button:disabled {
 
 .games-grid {
    display: grid;
-   grid-template-columns: repeat(2, 300px);
+   grid-template-columns: repeat(3, 300px);
    column-gap: 10em; /* space between columns */
-   row-gap: 3em;  /* space between rows */
+   row-gap: 10em;  /* space between rows */
    max-width: 650px;
    margin: 2em auto;
    padding: 1em;
@@ -288,46 +298,4 @@ button:disabled {
    text-decoration: none;
    color: inherit;
    display: block;
-}
-
-.board {
-   display: grid;
-   grid-template-columns: repeat(3, 100px);
-   grid-template-rows: repeat(3, 100px);
-   gap: 5px;
-   justify-content: center;
-   margin: 1em 0;
-}
-
-.cell {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-size: 2.5em;
-   background-color: #fff;
-   border: 2px solid #333;
-   cursor: pointer;
-   user-select: none;
-   font-weight: bold;
-}
-
-.cell:hover {
-   background-color: #f0f0f0;
-}
-
-.status {
-   margin-top: 1em;
-   font-size: 1.2em;
-   font-weight: bold;
-}
-
-.restart-btn {
-   margin-top: 1em;
-   padding: 0.5em 1em;
-   font-size: 1em;
-   cursor: pointer;
-}
-
-.game-wrapper {
-   text-align: center;
 }

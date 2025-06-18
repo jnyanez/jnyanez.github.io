@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Search | Grayson's Site</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(15, 40px);
+      gap: 3px;
+      margin-bottom: 2em;
+      user-select: none;
+    }
+
+    .cell {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border: 1px solid #ccc;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .cell.selected {
+      background-color: #ffe600; /* yellow highlight */
+      color: black;
+    }
+
+    .word-list {
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="center-top">
+     <h1 style="margin-bottom: .5em;">Space Word Search</h1>
+     <div id="grid"></div>
+     <div class="word-list" id="wordList"></div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/scripts.js"></script>
+  <script src="js/word-search.js"></script>
+</body>
+</html>
+

@@ -4,17 +4,54 @@
       <meta charset="UTF-8">
       <title>Tic Tac Toe | Grayson's Site</title>
       <link rel="stylesheet" href="css/styles.css">
+      <style>
+         .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            justify-content: center;
+            margin: 1em 0;
+         }
+
+         .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            background-color: #fff;
+            border: 2px solid #333;
+            cursor: pointer;
+            user-select: none;
+            font-weight: bold;
+         }
+
+         .cell:hover {
+            background-color: #f0f0f0;
+         }
+
+         .status {
+            margin-top: 1em;
+            font-size: 1.2em;
+            font-weight: bold;
+         }
+
+         .restart-btn {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            cursor: pointer;
+         }
+      </style>
    </head>
    <body>
       <div id="site-header"></div>
 
-      <main>
-         <div class="game-wrapper">
-            <h1>Tic Tac Toe</h1>
-            <div class="board" id="board"></div>
-            <div class="status" id="status">Player X's turn</div>
-            <button class="restart-btn" onclick="resetGame()">Restart</button>
-         </div>
+      <main class="center-top">
+         <h1>Tic Tac Toe</h1>
+         <div class="board" id="board"></div>
+         <div class="status" id="status">Player X's turn</div>
+         <button class="restart-btn" onclick="resetGame()">Restart</button>
       </main>
 
       <div id="site-footer"></div>
