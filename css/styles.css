@@ -251,3 +251,83 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.games-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 300px);
+   column-gap: 10em; /* space between columns */
+   row-gap: 3em;  /* space between rows */
+   max-width: 650px;
+   margin: 2em auto;
+   padding: 1em;
+   justify-content: center;
+}
+
+.game-box img {
+   width: 100%;
+   height: auto;
+   border-radius: 8px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+   transition: transform 0.2s ease;
+}
+
+.game-box img:hover {
+   transform: scale(1.05);
+}
+
+.game-title {
+   text-align: center;
+   margin-top: 0.5em;
+   font-weight: bold;
+   font-size: 1.1em;
+   color: #333;
+   text-decoration: none;
+}
+
+.game-box a {
+   text-decoration: none;
+   color: inherit;
+   display: block;
+}
+
+.board {
+   display: grid;
+   grid-template-columns: repeat(3, 100px);
+   grid-template-rows: repeat(3, 100px);
+   gap: 5px;
+   justify-content: center;
+   margin: 1em 0;
+}
+
+.cell {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 2.5em;
+   background-color: #fff;
+   border: 2px solid #333;
+   cursor: pointer;
+   user-select: none;
+   font-weight: bold;
+}
+
+.cell:hover {
+   background-color: #f0f0f0;
+}
+
+.status {
+   margin-top: 1em;
+   font-size: 1.2em;
+   font-weight: bold;
+}
+
+.restart-btn {
+   margin-top: 1em;
+   padding: 0.5em 1em;
+   font-size: 1em;
+   cursor: pointer;
+}
+
+.game-wrapper {
+   text-align: center;
+}
