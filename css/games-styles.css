@@ -1,0 +1,58 @@
+.games-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);  /* 3 tiles across by default */
+   /*gap: 2em;*/
+   column-gap: 2.5em;
+   row-gap: 5em;
+   padding: 1em;
+   max-width: 100%;
+   overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+   main {
+      padding: 1em;
+   }
+
+   .games-grid {
+      grid-template-columns: repeat(2, 1fr);  /* 2 tiles across on tablets */
+   }
+}
+
+@media (max-width: 600px) {
+   main {
+      padding: 1em;
+   }
+
+   .games-grid {
+      grid-template-columns: repeat(1, 1fr);  /* 1 tile across on phones */
+   }
+}
+
+.game-box a {
+   text-decoration: none;
+   color: inherit;
+   display: block;
+}
+
+.game-box img {
+   width: 100%;
+   height: auto;
+   max-width: 60%;
+   border-radius: 8px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+   transition: transform 0.2s ease;
+}
+
+.game-box img:hover {
+   transform: scale(1.05);
+}
+
+.game-title {
+   text-align: center;
+   margin-top: 0.5em;
+   font-weight: bold;
+   font-size: 1.1em;
+   color: #333;
+   text-decoration: none;
+}

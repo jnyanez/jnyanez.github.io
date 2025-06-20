@@ -1,0 +1,23 @@
+button:disabled {
+   opacity: 0.5;
+   cursor: not-allowed;
+}
+
+.nav-buttons {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   margin-bottom: 50px;
+   font-size: 18px;
+}
+
+.nav-buttons button {
+   font-size: 24px;
+   padding: 10px 20px;
+   cursor: pointer;
+}
+
+.nav-buttons input[type="number"] {
+   font-size: 16px;
+   padding: 4px;
+}

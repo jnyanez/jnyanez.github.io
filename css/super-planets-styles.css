@@ -1,0 +1,67 @@
+.close-btn {
+   position: absolute;
+   top: -10px; right: -10px;
+   font-size: 24px;
+   color: white;
+   background: red;
+   border: none;
+   border-radius: 50%;
+   width: 32px; height: 32px;
+   cursor: pointer;
+   line-height: 32px;
+   text-align: center;
+   z-index: 10;
+}
+
+.hotspot {
+   /* Show red outline for hotspot zones */
+   /*
+   background: rgba(255, 0, 0, 0.3);
+   border: 2px dashed red;
+    */
+   position: absolute;
+   display: block;
+   cursor: pointer;
+}
+
+.image-wrapper {
+   position: relative;
+   width: 100%;
+}
+
+.popup {
+   display: none;
+   position: fixed;
+   top: 0; left: 0;
+   width: 100vw; height: 100vh;
+   background-color: rgba(0, 0, 0, 0.8);
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+   overflow: auto;          /* Allows scrolling */
+   padding: 2em 1em;        /* Adds spacing when scrolling */
+   box-sizing: border-box;  /* Avoid content overflowing due to padding */
+}
+
+.popup-content {
+   position: relative;
+   max-width: 90%;
+   width: auto;
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   margin: auto;
+}
+
+.popup-content img {
+   width: 100%;
+   height: auto;
+   max-height: 90vh;         /* Keeps it within visible screen height */
+   border: 4px solid white;
+   border-radius: 8px;
+   display: block;
+}
+
+.popup-content img[src=""] {
+   display: none;
+}
