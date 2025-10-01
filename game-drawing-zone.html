@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Drawing Zone | Grayson's Site</title>
+      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/game-drawing-zone-styles.css">
+   </head>
+   <body>
+      <div id="site-header"></div>
+
+      <main class="center-top">
+         <h1>Drawing Zone</h1>
+
+         <!-- Controls under H1 and above the canvas -->
+         <div class="toolbar" role="region" aria-label="Drawing controls">
+            <div class="group" role="group" aria-label="Colors">
+               <span class="hint">Color:</span>
+               <!-- Primary RGB colors + black/white -->
+               <button class="swatch" data-color="#ff0000" style="background:#ff0000" aria-label="Red" aria-selected="true"></button>
+               <button class="swatch" data-color="#00ff00" style="background:#00ff00" aria-label="Green"></button>
+               <button class="swatch" data-color="#0000ff" style="background:#0000ff" aria-label="Blue"></button>
+               <button class="swatch" data-color="#000000" style="background:#000000" aria-label="Black"></button>
+               <button class="swatch" data-color="#ffffff" style="background:#ffffff" aria-label="White"></button>
+               <div class="divider" aria-hidden="true"></div>
+               <input id="customColor" type="color" value="#ff00ff" title="Pick a custom color" />
+               <button id="addCustom" class="btn" aria-label="Add custom color">Add custom</button>
+            </div>
+
+            <div class="group" role="group" aria-label="Brush">
+               <label for="brushSize">Brush size</label>
+               <input id="brushSize" type="range" min="1" max="60" value="12" />
+               <button id="eraser" class="btn" aria-pressed="false" title="Eraser (toggle)">Eraser</button>
+            </div>
+
+            <div class="group" role="group" aria-label="Actions">
+               <button id="clear" class="btn danger" title="Clear the entire drawing">Clear</button>
+            </div>
+         </div>
+
+         <div class="canvas-wrap">
+            <canvas id="pad" width="1920" height="1080" aria-label="Drawing canvas"></canvas>
+         </div>
+      </main>
+
+      <div id="site-footer"></div>
+
+      <script src="js/scripts.js"></script>
+      <script src="js/drawing.js"></script>
+   </body>
+</html>
+
