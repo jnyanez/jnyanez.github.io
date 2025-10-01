@@ -1,160 +1,138 @@
-/* ================================
-   Drawing Zone (scoped styles)
-   ================================ */
-
-/* Scope everything to the Drawing Zone area */
 .center-top {
-  /* keep your global layout; just control local width/spacing */
-  width: min(1200px, 100%);
-  margin: 0 auto;
+   width: min(1200px, 100%);
+   margin: 0 auto;
 }
 
-/* Heading spacing */
 .center-top > h1 {
-  margin: 0 0 12px;
+   margin: 0 0 12px;
 }
 
-/* ---------- Toolbar ---------- */
 .toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-
-  /* Light card look to match your site's light theme */
-  background: #ffffff;
-  color: #222;
-  border: 1px solid #d0d7de;  /* subtle gray */
-  border-radius: 14px;
-  padding: 10px 12px;
-  margin: 0 0 12px;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 10px;
+   background: #ffffff;
+   color: #222;
+   border: 1px solid #d0d7de;  /* subtle gray */
+   border-radius: 14px;
+   padding: 10px 12px;
+   margin: 0 0 12px;
 }
 
 .group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  background: #f6f8fa;
-  border: 1px solid #e2e5e9;
-  border-radius: 12px;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   padding: 8px 10px;
+   background: #f6f8fa;
+   border: 1px solid #e2e5e9;
+   border-radius: 12px;
 }
 
-/* Small label text in toolbar */
-.hint,
-.toolbar label {
-  font-size: 12px;
-  color: #6b7280; /* muted */
+.hint, .toolbar label {
+   font-size: 12px;
+   color: #6b7280; /* muted */
 }
 
-/* Divider between color and inputs */
 .divider {
-  width: 1px;
-  height: 32px;
-  background: #e5e7eb;
-  margin: 0 4px;
+   width: 1px;
+   height: 32px;
+   background: #e5e7eb;
+   margin: 0 4px;
 }
 
-/* Buttons */
 .btn {
-  cursor: pointer;
-  border: 1px solid #d0d7de;
-  background: #ffffff;
-  color: #111827;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: transform .06s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+   cursor: pointer;
+   border: 1px solid #d0d7de;
+   background: #ffffff;
+   color: #111827;
+   padding: 8px 12px;
+   border-radius: 10px;
+   font-weight: 600;
+   transition: transform .06s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
-.btn:hover { transform: translateY(-1px); }
+
+.btn:hover {
+   transform: translateY(-1px);
+}
+
 .btn:focus-visible {
-  outline: 2px solid #2563eb; /* blue focus ring */
-  outline-offset: 2px;
+   outline: 2px solid #2563eb; /* blue focus ring */
+   outline-offset: 2px;
 }
-.btn[aria-pressed="true"],
-.btn.active {
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35) inset;
+
+.btn[aria-pressed="true"], .btn.active {
+   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35) inset;
 }
+
 .btn.danger {
-  background: #fff4f4;
-  border-color: #f0b4b4;
-  color: #7f1d1d;
+   background: #fff4f4;
+   border-color: #f0b4b4;
+   color: #7f1d1d;
 }
+
 .btn.danger:hover {
-  border-color: #ef4444;
+   border-color: #ef4444;
 }
 
-/* Brush size slider */
 #brushSize {
-  width: 140px;
+   width: 140px;
 }
+
 @media (max-width: 640px) {
-  #brushSize { width: 110px; }
+   #brushSize { width: 110px; }
 }
 
-/* ---------- Color Swatches ---------- */
 .swatch {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 2px solid #d0d7de; /* visible on light bg */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: relative; /* for white checker assist */
+   width: 28px;
+   height: 28px;
+   border-radius: 999px;
+   border: 2px solid #d0d7de; /* visible on light bg */
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   position: relative;
 }
-
-/* Give the white swatch some contrast using a subtle checkerboard */
-.swatch[data-color="#ffffff"]::before,
-.swatch[style*="background:#ffffff"]::before,
-.swatch[style*="background: #ffffff"]::before {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  background-image:
-    linear-gradient(45deg, #e5e7eb 25%, transparent 25%),
-    linear-gradient(-45deg, #e5e7eb 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #e5e7eb 75%),
-    linear-gradient(-45deg, transparent 75%, #e5e7eb 75%);
-  background-size: 8px 8px;
-  background-position: 0 0, 0 4px, 4px -4px, -4px 0;
-  border-radius: 999px;
-  z-index: 0;
-}
-.swatch[style*="background:#ffffff"] { background-clip: padding-box; }
 
 .swatch[aria-selected="true"] {
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, .45);
+   box-shadow: 0 0 0 3px rgba(37, 99, 235, .45);
 }
+
 .swatch:focus-visible {
-  outline: 3px solid #2563eb;
-  outline-offset: 2px;
+   outline: 3px solid #2563eb;
+   outline-offset: 2px;
 }
 
-/* ---------- Canvas Area ---------- */
+.swatch[data-color="#ffffff"],
+.swatch[style*="background:#ffffff"],
+.swatch[style*="background: #ffffff"] {
+   box-shadow: inset 0 0 0 2px #cbd5e1;
+}
+
 .canvas-wrap {
-  /* Light card around the canvas */
-  background: #ffffff;
-  border: 1px solid #d0d7de;
-  border-radius: 16px;
-  overflow: hidden;
+   background: #ffffff;
+   border: 1px solid #d0d7de;
+   border-radius: 16px;
+   overflow: hidden;
 
-  /* Responsive height: phones -> desktop */
-  height: clamp(360px, 70vh, 1000px);
-  width: 100%;
-  display: grid;
+   height: clamp(360px, 70vh, 1000px);
+   width: 100%;
+   display: grid;
 }
 
-/* Make canvas fill its wrapper; allow touch drawing */
 #pad {
-  width: 100%;
-  height: 100%;
-  display: block;
-  touch-action: none; /* so touch can draw */
-  background: #ffffff;
+   width: 100%;
+   height: 100%;
+   display: block;
+   touch-action: none; /* so touch can draw */
+   background: #ffffff;
 }
 
-/* Optional: sticky toolbar under your fixed site header while scrolling
-.toolbar { position: sticky; top: 0; z-index: 10; } */
-
+/* Optional: sticky toolbar under your fixed site header while scrolling */
+.toolbar {
+   position: sticky;
+   top: 0;
+   z-index: 10;
+}
