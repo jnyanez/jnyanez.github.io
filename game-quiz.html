@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz | Grayson's Site</title>
+
+    <!-- Your site-wide styles first -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Page-specific styles for this quiz -->
+    <link rel="stylesheet" href="css/game-quiz-styles.css" />
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="center-top quiz-zone">
+      <h1>Super Sun Comics Quiz</h1>
+
+      <!-- Start Screen -->
+      <section id="start-screen" class="card">
+        <p>Ready to test your Super Sun knowledge? This quiz will pick 5 random questions.</p>
+        <button id="startBtn" class="btn primary">Start Quiz</button>
+      </section>
+
+      <!-- Quiz Screen -->
+      <section id="quiz-screen" class="card hidden" aria-live="polite">
+        <div class="quiz-header">
+          <div id="progress" class="muted">Question 1 of 5</div>
+        </div>
+
+        <div id="question-container">
+          <!-- Question text -->
+          <h2 id="question-text"></h2>
+
+          <!-- Options -->
+          <form id="options-form" class="options" aria-labelledby="question-text">
+            <!-- Radio inputs injected here -->
+          </form>
+        </div>
+
+        <div class="actions">
+          <button id="nextBtn" class="btn">Next</button>
+          <button id="submitBtn" class="btn primary hidden">Submit Quiz</button>
+        </div>
+      </section>
+
+      <!-- Result Screen -->
+      <section id="result-screen" class="card hidden">
+        <h2>Your Score</h2>
+        <p id="score-line" class="score-line"></p>
+
+        <details class="review">
+          <summary>Review Answers</summary>
+          <ol id="review-list"></ol>
+        </details>
+
+        <button id="restartBtn" class="btn">Restart</button>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <!-- Your site-wide scripts (if any) -->
+    <script src="js/scripts.js"></script>
+
+    <!-- Page-specific JS for this quiz -->
+    <script src="js/quiz.js"></script>
+  </body>
+</html>
